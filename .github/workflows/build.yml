@@ -1,28 +1,34 @@
-# GitHub Actions workflow: build C++ components with CMake on macOS
-name: Build
+name: Build MS Plug In App
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main", "master" ]
 
 jobs:
-  build:
+  build-ios:
     runs-on: macos-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: |
-          brew update
-          brew install cmake || true
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest
 
-      - name: Configure CMake
-        run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+    - name: Configure CMake for iOS
+      run: |
+        cmake -B build -G Xcode \
+          -DCMAKE_SYSTEM_NAME=iOS \
+          -DCMAKE_OSX_SYSROOT=iphoneos
 
-      - name: Build
-        run: |
-          cmake --build build --config Release
+    - name: Build App Executable
+      run: cmake --build build --config Release
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: MSPlugIn-Build1
+        path: build/Release-iphoneos/
