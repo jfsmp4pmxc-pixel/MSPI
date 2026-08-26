@@ -1,20 +1,33 @@
 #pragma once
-
 #include <string>
 
-// EnvironmentChecker: Dynamic system check core
-// - Đây là header mẫu (placeholder). Các hàm thực tế để kiểm tra jailbreak/TrollStore/tiền xử lý hệ thống
-//   phải được triển khai cẩn thận và tuân thủ chính sách App Store / pháp lý khi cần.
+namespace MSPlugIn {
+
+enum class EnvironmentType {
+    DEMO_MODE,          // iOS Thuần / Sideload Phổ thông
+    TROLLSTORE_MODE,    // Hỗ trợ TrollStore / Direct Container
+    JAILBREAK_MODE      // Jailbreak (ElleKit / Substrate)
+};
+
+struct SystemInfo {
+    std::string osVersion;
+    std::string deviceModel;
+    EnvironmentType envType;
+    std::string suggestedTool;
+};
 
 class EnvironmentChecker {
 public:
-    // Kiểm tra xem thiết bị có nghi ngờ đã jailbreak hay không.
-    // Trả về true nếu có dấu hiệu (placeholder).
-    static bool isJailbroken();
+    EnvironmentChecker();
+    ~EnvironmentChecker();
 
-    // Kiểm tra xem TrollStore (hoặc cửa hàng bên thứ ba tương tự) có được phát hiện hay không.
-    static bool isTrollStoreInstalled();
+    SystemInfo runDiagnostics();
 
-    // Chạy tất cả các kiểm tra và trả về mô tả ngắn gọn của kết quả.
-    static std::string runChecks();
+private:
+    bool checkJailbreak();
+    bool checkTrollStoreSupport();
+    std::string detectOSVersion();
+    std::string detectDeviceModel();
 };
+
+} // namespace MSPlugIn
