@@ -1,20 +1,22 @@
 cmake_minimum_required(VERSION 3.15)
-project(MSPI LANGUAGES CXX)
+project(MSPlugIn CXX OBJCXX)
 
-option(BUILD_APP "Build the Objective-C++ App executable" OFF)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(include)
 
-# Library: EnvironmentChecker (C++)
-add_library(EnvironmentChecker STATIC src/EnvironmentChecker.cpp)
-target_include_directories(EnvironmentChecker PUBLIC ${CMAKE_SOURCE_DIR}/include)
-set_target_properties(EnvironmentChecker PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES)
+find_library(UIKIT_KIT UIKit)
+find_library(FOUNDATION_KIT Foundation)
 
-# Optional App executable (Objective-C++). Disabled by default because building iOS UI on CI is platform-specific.
-if(BUILD_APP)
-  enable_language(OBJCXX)
-  add_executable(MSPIApp src/main.mm src/MainViewController.mm)
-  target_link_libraries(MSPIApp PRIVATE EnvironmentChecker)
-  # For iOS builds you would link UIKit/Foundation frameworks; leave platform-specific details to the user.
-endif()
+add_executable(MSPlugIn
+    src/EnvironmentChecker.cpp
+    src/MainViewController.mm
+    src/main.mm
+)
+
+target_link_libraries(MSPlugIn
+    ${UIKIT_KIT}
+    ${FOUNDATION_KIT}
+)
+
