@@ -1,18 +1,22 @@
-// App entry point (Objective-C++ placeholder)
-// Đây không phải là một App iOS hoàn chỉnh. Nó chỉ in thông báo khi chạy như một binary trên macOS.
+#import <UIKit/UIKit.h>
+#import "MainViewController.mm"
 
-#include <iostream>
-#include "../include/EnvironmentChecker.hpp"
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (strong, nonatomic) UIWindow *window;
+@end
 
-int main(int argc, char *argv[]) {
-    std::cout << "MSPI placeholder app starting..." << std::endl;
+@implementation AppDelegate
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[MainViewController alloc] init];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+@end
 
-    std::string checks = EnvironmentChecker::runChecks();
-    std::cout << checks << std::endl;
-
-    // Nếu cần, có thể tạo và sử dụng MainViewController ở đây (Objective-C++).
-    // MainViewController *vc = [[MainViewController alloc] init];
-    // [vc start];
-
-    return 0;
+int main(int argc, char * argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
 }
