@@ -1,22 +1,19 @@
-#import <UIKit/UIKit.h>
-#import "MainViewController.mm"
+#include <iostream>
+#include "EnvironmentChecker.hpp"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-@property (strong, nonatomic) UIWindow *window;
-@end
+int main() {
+    EnvironmentChecker checker;
+    EnvironmentInfo info = checker.getSystemInfo();
 
-@implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[MainViewController alloc] init];
-    [self.window makeKeyAndVisible];
-    return YES;
-}
-@end
+    std::cout << "OS Name: " << info.osName << std::endl;
+    std::cout << "OS Version: " << info.osVersion << std::endl;
+    std::cout << "Architecture: " << info.cpuArchitecture << std::endl;
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    if (checker.checkCompatibility()) {
+        std::cout << "Moi truong tuong thich!" << std::endl;
+    } else {
+        std::cout << "Moi truong khong tuong thich!" << std::endl;
     }
-}
+
+    return 0;
 }
