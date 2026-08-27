@@ -29,5 +29,4 @@ private:
     std::string detectOSVersion();
     std::string detectDeviceModel();
 };
-
-} // namespace MSPlugIn
+// namespace MSPlugIn
