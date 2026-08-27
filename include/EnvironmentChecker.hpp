@@ -4,11 +4,19 @@
 #include <string>
 #include <vector>
 
-struct EnvironmentInfo {
+namespace MSPlugIn {
+
+enum class EnvironmentType {
+    UNKNOWN,
+    JAILBREAK_MODE,
+    TROLLSTORE_MODE,
+    SANDBOX_MODE
+};
+
+struct SystemInfo {
     std::string osName;
     std::string osVersion;
-    std::string cpuArchitecture;
-    bool isCompatible;
+    EnvironmentType envType;
 };
 
 class EnvironmentChecker {
@@ -16,9 +24,10 @@ public:
     EnvironmentChecker();
     ~EnvironmentChecker();
 
-    EnvironmentInfo getSystemInfo() const;
+    SystemInfo runDiagnostics() const;
     bool checkCompatibility() const;
-    std::vector<std::string> getMissingDependencies() const;
 };
+
+} // namespace MSPlugIn
 
 #endif // ENVIRONMENT_CHECKER_HPP
