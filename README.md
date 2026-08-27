@@ -8,9 +8,7 @@
 ### hỗ trợ
 ```C
    IPhone:
-      IOS 14.x.x : V
-      IOS 15.x.x : V
-      IOS 16.x   : V
+      IOS 14.0 -> IOS 16.7
    Android:
       (chưa hỗ trợ)
 ```
