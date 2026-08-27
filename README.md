@@ -16,6 +16,8 @@
       (chưa hỗ trợ)
 ```
 
+### hướng dẫn thiết lập
+ Do giới hạn hệ thống và sự kiểm duyệt khắc khe của Apple, tôi không thể phát hành ứng dụng lên AppStore. Nên để sử dụng bản Demo hoặc Full và Root thì có những hướng dẫn sau đây:
 
 ### Nhật ký thay đổi
 b0.1 (1):
