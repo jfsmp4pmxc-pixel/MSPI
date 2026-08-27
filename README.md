@@ -35,9 +35,9 @@
    5, bạn quay lại đây và tìm mục "releases" ở repo này và tìm bản build mà bạn muốn để tải **(lưu ý là tải cái có đuôi là .ipa, vd: MSPIv1.0(36)<u>.ipa</u>)**  
    6, sau đó vào Esign/Ksign >> "+" >> "nhập" >> chọn tệp bạn vừa tải >> bấm vào dòng mới xuất hiện >> nhập vào thư viện >> vào tab thư viện >> bấm vào icon gì đó >> ký & cài đặt
    7, mở MSPI >> kiểm tra hệ thống >> nếu nó hiện dấu tick xanh thì >> bấm "tiếp" nếu không thì bấm "cách khác" hoặc "dùng bản Demo" >> bạn bấm "tiếp" sau đó bấm vào "cài đặt launcher"  
-   8, vào Esign/Ksign và nhập file "trollinstallerx.ipa" >> nhập vào thư viện >> vào tab thư viện >> tìm icon troll face (đừng hỏi tôi tại sao là troll face) >> ký & cài đặt
-   9, mở app vừa cài >> bấm "install trollstore" (không đc thoát cho đến khi nó cài xong) >> IPhone sẽ reboot hoặc không, và bạn đã cài trollstore!
-   9.1, bạn có thể vào tab multimelon trên MSPI để tải game để dùng như bình thường.
+   8, vào Esign/Ksign và nhập file "trollinstallerx.ipa" >> nhập vào thư viện >> vào tab thư viện >> tìm icon troll face (đừng hỏi tôi tại sao là troll face) >> ký & cài đặt  
+   9, mở app vừa cài >> bấm "install trollstore" (không đc thoát cho đến khi nó cài xong) >> IPhone sẽ reboot hoặc không, và bạn đã cài trollstore!  
+   9.1, bạn có thể vào tab multimelon trên MSPI để tải game để dùng như bình thường.  
 
 ### Nhật ký thay đổi
 b0.1 (1):
