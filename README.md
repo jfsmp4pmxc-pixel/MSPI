@@ -24,6 +24,11 @@
    3, tiếp theo bạn vào đây > [[nguồn: khoindvn]](https://khoindvn.io.vn) và tải Esign hoặc Ksign (tuỳ bạn), tải đến khi nào có một app còn sống (bấm vào thì nó thông báo chưa tin cậy)  
    4, sau đó vào Cài Đặt >> Cài đặt chung >> quản lý VPN & thiết bị >> dòng cuối >> tin cậy  
    5, bạn quay lại đây và tìm mục "releases" ở repo này và tìm bản build mà bạn muốn để tải **(lưu ý là tải cái có đuôi là .ipa, vd: MSPIv1.0(36)<u>.ipa</u>)**  
+   6, sau đó vào Esign/Ksign >> "+" >> "nhập" >> chọn tệp bạn vừa tải >> bấm vào dòng mới xuất hiện >> nhập vào thư viện >> vào tab thư viện >> bấm vào icon gì đó >> ký & cài đặt  
+   7, mở MSPI chọn "skip thẳng vào Demo"  
+   xong!
+
+
 ### Nhật ký thay đổi
 b0.1 (1):
 - thử nghiệm giao diện
