@@ -27,14 +27,17 @@
    6, sau đó vào Esign/Ksign >> "+" >> "nhập" >> chọn tệp bạn vừa tải >> bấm vào dòng mới xuất hiện >> nhập vào thư viện >> vào tab thư viện >> bấm vào icon gì đó >> ký & cài đặt  
    7, mở MSPI chọn "skip thẳng vào Demo"  
    xong!
- 2. với bản Full (skip đến bước 6 nếu bạn đã tải công cụ sideload ipa)
+ 2. với bản Full (skip đến bước 6 nếu bạn đã tải công cụ sideload ipa)  
    1, bạn truy cập trang này > [[nguồn: khoindvn]](https://release-assets.githubusercontent.com/github-production-release-asset/1224449257/c2817d3a-285f-47b7-8be5-ef97ce494d88?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-08-27T06%3A27%3A56Z&rscd=attachment%3B+filename%3Dkhoindvn.mobileconfig&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-08-27T05%3A27%3A47Z&ske=2026-08-27T06%3A27%3A56Z&sks=b&skv=2018-11-09&sig=7aOZiqkN72Jucyw4lPdnwYy%2BMbgv%2BIEvdMp3tlRIRjU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NzgwOTE5NSwibmJmIjoxNzg3ODA4ODk1LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.bxlHgfYilGYuexnyHWceOuZCvKgE9Kux5szVaOUTYlg&response-content-disposition=attachment%3B%20filename%3Dkhoindvn.mobileconfig&response-content-type=application%2Foctet-stream) và nhấn "cho phép"  
    2, sau đi vào Cài Đặt, và ngay dưới mục icloud bạn sẽ thấy dòng "Đã tải về hồ sơ", nhấn vào và nhấn "cài đặt"  
    3, tiếp theo bạn vào đây > [[nguồn: khoindvn]](https://khoindvn.io.vn) và tải Esign hoặc Ksign (tuỳ bạn), tải đến khi nào có một app còn sống (bấm vào thì nó thông báo chưa tin cậy)  
    4, sau đó vào Cài Đặt >> Cài đặt chung >> quản lý VPN & thiết bị >> dòng cuối >> tin cậy  
    5, bạn quay lại đây và tìm mục "releases" ở repo này và tìm bản build mà bạn muốn để tải **(lưu ý là tải cái có đuôi là .ipa, vd: MSPIv1.0(36)<u>.ipa</u>)**  
    6, sau đó vào Esign/Ksign >> "+" >> "nhập" >> chọn tệp bạn vừa tải >> bấm vào dòng mới xuất hiện >> nhập vào thư viện >> vào tab thư viện >> bấm vào icon gì đó >> ký & cài đặt
-
+   7, mở MSPI >> kiểm tra hệ thống >> nếu nó hiện dấu tick xanh thì >> bấm "tiếp" nếu không thì bấm "cách khác" hoặc "dùng bản Demo" >> bạn bấm "tiếp" sau đó bấm vào "cài đặt launcher"  
+   8, vào Esign/Ksign và nhập file "trollinstallerx.ipa" >> nhập vào thư viện >> vào tab thư viện >> tìm icon troll face (đừng hỏi tôi tại sao là troll face) >> ký & cài đặt
+   9, mở app vừa cài >> bấm "install trollstore" (không đc thoát cho đến khi nó cài xong) >> IPhone sẽ reboot hoặc không, và bạn đã cài trollstore!
+   9.1, bạn có thể vào tab multimelon trên MSPI để tải game để dùng như bình thường.
 
 ### Nhật ký thay đổi
 b0.1 (1):
