@@ -2,77 +2,32 @@
 #include <sys/stat.h>
 #include <sys/utsname.h>
 #include <unistd.h>
-#include <vector>
+#include <vector>#include "EnvironmentChecker.hpp"
 
-namespace MSPlugIn {
-
-EnvironmentChecker::EnvironmentChecker() {}
-EnvironmentChecker::~EnvironmentChecker() {}
-
-std::string EnvironmentChecker::detectDeviceModel() {
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    return std::string(systemInfo.machine);
+EnvironmentChecker::EnvironmentChecker() {
+    // Khởi tạo nếu cần
 }
 
-std::string EnvironmentChecker::detectOSVersion() {
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    return std::string(systemInfo.release);
+EnvironmentChecker::~EnvironmentChecker() {
+    // Dọn dẹp tài nguyên nếu cần
 }
 
-bool EnvironmentChecker::checkJailbreak() {
-    const std::vector<std::string> jbPaths = {
-        "/var/jb/usr/bin/libellekit.dylib",
-        "/usr/lib/ellekit.dylib",
-        "/Library/MobileSubstrate/MobileSubstrate.dylib",
-        "/Applications/Sileo.app",
-        "/Applications/Zebra.app"
-    };
-
-    struct stat buffer;
-    for (const auto& path : jbPaths) {
-        if (stat(path.c_str(), &buffer) == 0) {
-            return true;
-        }
-    }
-    
-    FILE* file = fopen("/var/mobile/test_jb.txt", "w");
-    if (file != nullptr) {
-        fclose(file);
-        remove("/var/mobile/test_jb.txt");
-        return true;
-    }
-
-    return false;
-}
-
-bool EnvironmentChecker::checkTrollStoreSupport() {
-    struct stat buffer;
-    if (stat("/var/containers/Bundle/Application/", &buffer) == 0) {
-        return true;
-    }
-    return false;
-}
-
-SystemInfo EnvironmentChecker::runDiagnostics() {
-    SystemInfo info;
-    info.deviceModel = detectDeviceModel();
-    info.osVersion = detectOSVersion();
-
-    if (checkJailbreak()) {
-        info.envType = EnvironmentType::JAILBREAK_MODE;
-        info.suggestedTool = "Sileo / Zebra Repo";
-    } else if (checkTrollStoreSupport()) {
-        info.envType = EnvironmentType::TROLLSTORE_MODE;
-        info.suggestedTool = "TrollStore Direct Helper";
-    } else {
-        info.envType = EnvironmentType::DEMO_MODE;
-        info.suggestedTool = "SideStore / AltStore / ESign";
-    }
-
+EnvironmentInfo EnvironmentChecker::getSystemInfo() const {
+    EnvironmentInfo info;
+    info.osName = "Unknown OS";
+    info.osVersion = "1.0.0";
+    info.cpuArchitecture = "x86_64";
+    info.isCompatible = true;
     return info;
 }
 
-} // namespace MSPlugIn
+bool EnvironmentChecker::checkCompatibility() const {
+    // Thêm logic kiểm tra tương thích tại đây
+    return true;
+}
+
+std::vector<std::string> EnvironmentChecker::getMissingDependencies() const {
+    std::vector<std::string> missing;
+    // Thêm các phụ thuộc còn thiếu vào vector nếu có
+    return missing;
 }
