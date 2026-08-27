@@ -9,7 +9,7 @@ include_directories(include)
 find_library(UIKIT_KIT UIKit)
 find_library(FOUNDATION_KIT Foundation)
 
-# Khai báo tạo iOS App Bundle (.app) thay vì file thực thi đơn thuần
+# Đánh dấu MACOSX_BUNDLE để CMake tạo cấu trúc App (.app) thay vì file binary đơn thuần
 add_executable(MSPlugIn MACOSX_BUNDLE
     src/EnvironmentChecker.cpp
     src/MainViewController.mm
@@ -21,12 +21,11 @@ target_link_libraries(MSPlugIn
     ${FOUNDATION_KIT}
 )
 
-# Thêm các thuộc tính bắt buộc cho iOS Target (Bundle ID & Code Sign Offset)
+# Thiết lập Bundle ID và tắt Code Sign tự động để build thủ công không cần cert
 set_target_properties(MSPlugIn PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER "com.msplugin.app"
     XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "com.msplugin.app"
     XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO"
+    XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO"
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
 )
-)
-
